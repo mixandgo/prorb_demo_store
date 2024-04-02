@@ -13,8 +13,9 @@ class ProductDashboard < Administrate::BaseDashboard
     description: Field::String,
     name: Field::String,
     price: Field::String.with_options(searchable: false),
+    images: Field::ActiveStorage,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -37,6 +38,7 @@ class ProductDashboard < Administrate::BaseDashboard
     description
     name
     price
+    images
     created_at
     updated_at
   ].freeze
@@ -49,6 +51,7 @@ class ProductDashboard < Administrate::BaseDashboard
     description
     name
     price
+    images
   ].freeze
 
   # COLLECTION_FILTERS
@@ -69,4 +72,7 @@ class ProductDashboard < Administrate::BaseDashboard
   # def display_resource(product)
   #   "Product ##{product.id}"
   # end
+  def permitted_attributes(_action = nil)
+    super + [images: []]
+  end
 end

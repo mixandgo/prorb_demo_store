@@ -10,6 +10,7 @@ class CategoryDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     name: Field::String,
+    description: Field::Text,
     image: Field::ActiveStorage,
     products: Field::HasMany,
     created_at: Field::DateTime,
@@ -43,6 +44,7 @@ class CategoryDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     name
+    description
     image
     products
   ].freeze
