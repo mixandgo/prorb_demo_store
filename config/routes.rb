@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     end
   resources :categories, only: %i(index show)
   devise_for :users
+  patch "/cart", to: "carts#update", as: :add_to_cart
   get "up" => "rails/health#show", as: :rails_health_check
 
   root "site#index"
