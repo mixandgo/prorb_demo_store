@@ -7,7 +7,8 @@ class Cart < ApplicationRecord
     current_item = LineItem.find_by(product_id: product_id, cart: self)
     product = Product.find(product_id)
     if current_item
-      current_item.update(quantity: current_item.quantity + 1)
+      qty = quantity || current_item.quantity + 1
+      current_item.update(quantity: qty)
     else
       current_item = LineItem.create!(
         product_id: product.id,
@@ -17,5 +18,9 @@ class Cart < ApplicationRecord
       )
     end
     current_item
+  end
+
+  def total
+    line_items.sum { |i| i.price * i.quantity }
   end
 end

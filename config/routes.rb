@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :categories, only: %i(index show)
   devise_for :users
   patch "/cart", to: "carts#update", as: :add_to_cart
+  get "/checkout", to: "checkouts#show", as: :checkout
   get "up" => "rails/health#show", as: :rails_health_check
 
   root "site#index"
