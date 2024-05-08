@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_one :cart
   after_create :create_cart
 
+  pay_customer
+
   private
 
     def create_cart

@@ -74,4 +74,7 @@ end
 gem "devise"
 gem "administrate"
 gem "administrate-field-active_storage"
+gem "pay", "~> 7.0"
 
+# To use Stripe, also include:
+gem "stripe", "~> 10.0"
