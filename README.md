@@ -1,24 +1,5 @@
-# README
+# eComm Store
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An eComm store with Stripe integration (part of the Practical Ruby on Rails course).
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://mixandgo.com/rails-course
