@@ -13,6 +13,7 @@ class ProductDashboard < Administrate::BaseDashboard
     description: Field::String,
     name: Field::String,
     price: Field::String.with_options(searchable: false),
+    stripe_price_id: Field::String.with_options(searchable: false),
     images: Field::ActiveStorage,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
@@ -38,6 +39,7 @@ class ProductDashboard < Administrate::BaseDashboard
     description
     name
     price
+    stripe_price_id
     images
     created_at
     updated_at
@@ -51,6 +53,7 @@ class ProductDashboard < Administrate::BaseDashboard
     description
     name
     price
+    stripe_price_id
     images
   ].freeze
 
